@@ -1,5 +1,8 @@
 package spring_group.spring_artifact.account;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.persistence.*;
 import javax.inject.Inject;
 
@@ -30,6 +33,7 @@ public class AccountRepository {
 					.setParameter("email", email)
 					.getSingleResult();
 		} catch (PersistenceException e) {
+			Logger.getGlobal().log(Level.SEVERE, "Persistence Exception thrown!");
 			return null;
 		}
 	}
