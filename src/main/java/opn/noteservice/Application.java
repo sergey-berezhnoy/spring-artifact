@@ -1,3 +1,5 @@
 package opn.noteservice;
 
-public interface Application {}
+public interface Application {
+	
+}
