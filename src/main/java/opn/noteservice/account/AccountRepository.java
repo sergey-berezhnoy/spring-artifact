@@ -33,7 +33,7 @@ public class AccountRepository {
 					.setParameter("email", email)
 					.getSingleResult();
 		} catch (PersistenceException e) {
-			Logger.getGlobal().log(Level.SEVERE, "Persistence Exception thrown!");
+			Logger.getGlobal().log(Level.SEVERE, String.format("Persistence Exception thrown! No user with email %s found."+e.getMessage(), email));
 			return null;
 		}
 	}
