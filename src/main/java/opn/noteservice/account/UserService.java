@@ -13,13 +13,14 @@ import org.springframework.security.core.userdetails.*;
 
 public class UserService implements UserDetailsService {
 	
+	private static final String ADMIN = "admin";
 	@Autowired
 	private AccountRepository accountRepository;
 	
 	@PostConstruct	
 	protected void initialize() {
 		accountRepository.save(new Account("user", "demo", "ROLE_USER"));
-		accountRepository.save(new Account("admin", "admin", "ROLE_ADMIN"));
+		accountRepository.save(new Account(ADMIN, ADMIN, "ROLE_ADMIN"));
 	}
 	
 	@Override
