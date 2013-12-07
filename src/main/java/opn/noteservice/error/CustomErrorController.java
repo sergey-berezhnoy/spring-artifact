@@ -23,7 +23,6 @@ class CustomErrorController {
 		// retrieve some useful information from the request
 		Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
 		Throwable throwable = (Throwable) request.getAttribute("javax.servlet.error.exception");
-		// String servletName = (String) request.getAttribute("javax.servlet.error.servlet_name");
 		String exceptionMessage = getExceptionMessage(throwable, statusCode);
 		
 		String requestUri = (String) request.getAttribute("javax.servlet.error.request_uri");
