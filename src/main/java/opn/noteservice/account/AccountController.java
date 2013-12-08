@@ -29,7 +29,7 @@ class AccountController {
     public Account accounts(Principal principal) {
         Assert.notNull(principal);
         String stuff = "";
-        stuff.endsWith("ff");
+        //stuff.endsWith("ff");
         return accountRepository.findByEmail(principal.getName());
     }
 }
